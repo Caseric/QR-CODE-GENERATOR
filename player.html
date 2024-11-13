@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>player registration form</title>
+  <style> 
+    body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background-color: #a580c7;
+    }
+</style>
+</head>
+<body>
+    <header>
+        <h1>
+       <!--player verification form-->
+            <form action="/submit-player registration form" method="POST"></form>
+        <!--Upload an Image-->
+            <form id="upload-file" action="/upload" method="POST" enctype="multipart/form-data">
+                <br>
+                <input type="file" id="image" name="image" accept="image/*" required>
+                <label for="image">upload image</label>
+
+                <!--personal informtion-->
+        
+            <br><input type="text"  required id="family name" placeholder="family name">
+            <label for="family name"></label>
+
+           <br> <input type="text" required id="given name" placeholder="given name">
+            <label for="given name"> 
+              
+            </label>
+
+           <br> <input type="text" required id="gender" placeholder="gender">
+            <label for="gender">
+                
+            </label> 
+
+            <br><input type="date" required id="date of birth" placeholder="date of birth">
+            <label for="date of birth">
+            
+            </label>
+           <br> <input type="text" reqired id="main nationality" placeholder="main nationality">
+            <label for="main nationality"></label>
+            
+            <br>
+            <button type="submit">submit</button>
+        </form>
+    </h1>
+    </header>   
+</body>
+</html>

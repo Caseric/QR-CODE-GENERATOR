@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login with Eye Toggle for Password</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #dfd4d4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .login-container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(32, 31, 31, 0.1);
+            width: 300px;
+        }
+        .login-container h2 {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        .form-group {
+            margin-bottom: 10px;
+            position: relative;
+        }
+        .form-group label {
+            display: block;
+            font-weight: bold;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .form-group input[type="password"] {
+            font-family: Arial, sans-serif; /* Keep the password in asterisks */
+        }
+        .eye-icon {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+        }
+        .form-group button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .form-group button:hover {
+            background-color: #45a049;
+        }
+        .error {
+            color: red;
+            font-size: 14px;
+            text-align: center;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="login-container">
+    <h2>Offical Login </h2>
+
+    <!-- offical Login form -->
+
+    <form id="loginForm" action="/login" method="POST">
+        <div class="form-group">
+            <label for="username"></label>
+            <input type="text" required id="username" placeholder="username">
+        </div>
+        <div class="form-group">
+            <label for="password"></label>
+            <input type="password" placeholder="password" required id="password">
+            <!-- Eye Icon to toggle password visibility -->
+            <i class="fa fa-eye eye-icon" id="togglePassword"></i>
+        </div>
+        <div class="form-group">
+            <button type="submit">Login</button>
+        </div>
+        <div id="errorMessage" class="error"></div>
+    </form>
+</div>
+
+<script>
+    // Get the password field and the eye icon
+    const passwordField = document.getElementById('password');
+    const togglePasswordIcon = document.getElementById('togglePassword');
+
+    // Add event listener to toggle the visibility of the password
+    togglePasswordIcon.addEventListener('click', function() {
+        // Toggle password visibility
+        if (passwordField.type === 'password') {
+            passwordField.type = 'text';  // Show password
+            togglePasswordIcon.classList.remove('fa-eye');
+            togglePasswordIcon.classList.add('fa-eye-slash');  // Change icon to "eye-slash"
+        } else {
+            passwordField.type = 'password';  // Hide password
+            togglePasswordIcon.classList.remove('fa-eye-slash');
+            togglePasswordIcon.classList.add('fa-eye');  // Change icon back to "eye"
+        }
+    });
+</script>
+
+</body>
+</html>
